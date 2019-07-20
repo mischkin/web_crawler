@@ -11,10 +11,10 @@ import ast
 
 
 #1. Startseite URL
-start_url = 'https://gruene-startups.de/gruene-unternehmen/'
+#start_url = 'https://gruene-startups.de/gruene-unternehmen/'
 #url = 'https://biofabrik.com/'
 #url = 'https://biofabrik.com/Impressum/'
-url = 'https://gruene-startups.de/gruene-unternehmen/wpbdp_category/clean-tech/'
+#url = 'https://gruene-startups.de/gruene-unternehmen/wpbdp_category/clean-tech/'
 
 #2. Alle Links auf Startseite
 
@@ -108,11 +108,11 @@ def GetStartseiteLinks(url):
     return StartLinks
 
 #3 Wörter extrahieren
-def get_words(url, source = "north"):
+def get_words(url, source):
     r = requests.get(url)
     html = r.text
     soup = BeautifulSoup(html, "html5lib")
-    if source == "north":
+    if source == "northdata":
         # Block
         data_dic = {}
         div_1 = soup.find_all("div", class_ = "column")[2].find_all("p")
@@ -133,6 +133,45 @@ def get_words(url, source = "north"):
         # Bilanzsumme
         div_4 = ast.literal_eval(soup.find_all("div", class_ = "tab-content has-bar-charts")[0].get("data-data").strip().replace("\n", "").replace("false", '"false"'))
         return(div_1, div_2, div_3, div_4)
+    elif source == "impressum":
+        rechtsformen = [" GmbH "] #, " GmbH ", " GbR ", " OHG ", " KG ", " AG ", " GmbH & Co KG "]
+        firma = []
+        #for elem in soup(text=re.compile('.+?(?={})'.format(rechtsformen))): #'/^(.*?){}/'
+            #firma.append(elem)
+        elemlist = ["platzhalter"]
+        for c,elem in enumerate(soup.find_all("div")):
+            print(c)
+            elemlist[0] = elem
+            elem2 = elem.find_all("div")
+            for elem2a in elem2:
+                try:             
+                    if any(x in elem2a.get_text() for x in rechtsformen):
+                        elemlist[0] = elem2
+                        elem3 = elem2.find_all("div")
+                        for elem3a in elem3:
+                            try:
+                                if any(x in elem3a.get_text() for x in rechtsformen):
+                                    elemlist[0] = elem3
+                                else:
+                                    continue
+                            except(TypeError, AttributeError):
+                                print("TypeError")
+                    else:
+                        continue
+                except(TypeError, AttributeError):
+                    print("TypeError")
+            #print(elemlist)
+            try:
+                if any(x in elemlist[0].get_text() for x in rechtsformen):
+                    firma.append(re.findall('.+?(?={})'.format(rechtsformen), elemlist[0].get_text()))
+                else:
+                    continue
+            except(TypeError, AttributeError):
+                print("TypeError")
+        print("firma name LISTE ist: " + str(    ))
+        firma = str(firma[0])
+        print("firma name ist: " + str(firma))
+        return firma        
     else:        
         Meta = soup.find_all('meta')
         Content = []
@@ -162,14 +201,14 @@ def get_words(url, source = "north"):
 
 
 # Suchwörter
-Suchwörter = ['gmbh', 'ug', 'ggmbh', 'gug']
-Rechtsform = []
-for word in words:
-    for suchwort in Suchwörter:
-        if word.find(suchwort) != -1:
-            Rechtsform.append(word)
-        
-        
+#Suchwörter = ['gmbh', 'ug', 'ggmbh', 'gug']
+#Rechtsform = []
+#for word in words:
+#    for suchwort in Suchwörter:
+#        if word.find(suchwort) != -1:
+#            Rechtsform.append(word)
+#        
+#        
 
 #  Visualisierung
 def plot_word_dist(wordlist):
@@ -212,17 +251,6 @@ def company_crawler(urllist):
     return WebsiteLinksDic
         
         
-def word_crawler(LinkDic):
-    Word_Dic = {}
-    for c,company in enumerate(result_company):
-        print(company + " beginnt: " + str(c) + "/" + str(len(result_company)))
-        Word_Dic[company] = {}
-        for c,link in enumerate(result_company[company]):
-            print(str(c)+ "/" + str(len(result_company[company])))
-            print(link)
-            Word_Dic[company][link] = get_words(link)
-            #print(Word_Dic[company])
-        print(company + " fertig ")
 
         
 def north_data(company_name):
@@ -234,37 +262,70 @@ def north_data(company_name):
     name_split_string[0] = name_split_string[0][:-1]
     search_url = str(base_url) + str(name_split_string[0])
     print(search_url)
-    north_dic = get_words(search_url)   
+    north_dic = get_words(search_url, "northdata")   
     return north_dic
     
-result = cat_crawler(start_url)
+#result = cat_crawler(start_url)
 
 ## words je company (alle links)
-urllist = result[1]
-result_company = company_crawler(urllist)
+#urllist = result[1]
+#result_company = company_crawler(urllist)
 
 # northdata
-company_name = "circle concepts GmbH"
-result = north_data(company_name)
+#company_name = "circle concepts GmbH"
+#result = north_data(company_name)
 
 
    
 
 # LIste aus Dictionary
-a = [item for sublist in list(Word_Dic.values()) for item in sublist]
+#a = [item for sublist in list(Word_Dic.values()) for item in sublist]
 
 
 
 
+def get_words_all(WebsiteLinksDic):
+    Word_Dic = {}
+    for c,company in enumerate(WebsiteLinksDic):
+        print(company + " beginnt: " + str(c) + "/" + str(len(WebsiteLinksDic)))
+        Word_Dic[company] = {}
+        for c,link in enumerate(WebsiteLinksDic[company]):
+            print(str(c)+ "/" + str(len(WebsiteLinksDic[company])))
+            print(link)
+            if "impressum" in link.lower():
+                Word_Dic[company]["firma"] = {}
+                Word_Dic[company]["firma"] = get_words(link, "impressum")
+            else:
+                Word_Dic[company][link] = get_words(link, "anystring")
+        Word_Dic[company]["northdata"] = {}    
+        print("northdata url: " + str(north_data(Word_Dic[company]["firma"])))
+        Word_Dic[company]["northdata"] = north_data(Word_Dic[company]["firma"])
+        print(company + " fertig ")
+    return(Word_Dic)
+
+
+def run_program(urllist):
+    WebsiteLinksDic = company_crawler(urllist)
+    result = get_words_all(WebsiteLinksDic)
+    return result
+
+
+result = run_program(["https://www.photocircle.net"])
+result2 = run_program(["https://www.fdx.de"])
 
 
 
-
-
-
-
-
-
-
+## TODO
+# Json aus northdata auseinandernehmen
+# wenn link: href = /page_id=123 (s.biofabrik)
+# wenn kein Impressum: DAnn auf Startseite suchen usw...
+#
+#
+#
+#
+#
+#
+#
+#
 
 
