@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import bs4
 import re
 from nltk.tokenize import RegexpTokenizer
 import nltk
@@ -8,7 +9,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import ast
-
+import numpy as np
 
 #1. Startseite URL
 #start_url = 'https://gruene-startups.de/gruene-unternehmen/'
@@ -319,8 +320,8 @@ result2 = run_program(["https://www.fdx.de"])
 # Json aus northdata auseinandernehmen
 # wenn link: href = /page_id=123 (s.biofabrik)
 # wenn kein Impressum: DAnn auf Startseite suchen usw...
-#
-#
+# Rechtsformen Liste: AG zu allgemeine, aber wenn steht AG\n weil dannach Absatz erkennt er es nicht
+# get_firma: schon ab 1. Ebene String ermöglichen...und zu Liste adden
 #
 #
 #
@@ -328,4 +329,159 @@ result2 = run_program(["https://www.fdx.de"])
 #
 #
 
+## TEST
+url = "https://www.fdx.de/impressum/"
+r = requests.get(url)
+html = r.text
+soup = BeautifulSoup(html, "html5lib")
+div1 = soup.find_all("div")
+rechtsformen = ["GmbH", "GbR", "OHG", " KG ", "KG\n", "AG ", "AG\n", "GmbH & Co KG"]
+L = []
+L2 = []
+L2b = []
+L3 = []
+L4 = []
+Ls1 =[]
 
+
+def get_firma(url):
+    L = []
+    L2 = []
+    L2b = []
+    L3 = []
+    L4 = []
+    Ls1 =[]
+    r = requests.get(url)
+    html = r.text
+    soup = BeautifulSoup(html, "html5lib")
+    div1 = soup.find_all("div")
+    rechtsformen = ["GmbH", "GbR", "OHG", " KG ", "KG\n", "AG ", "AG\n", "GmbH & Co KG"]
+    firmalist = []
+    for c,element in enumerate(div1):
+        print(str(c) + "/" + str(len(div1)-1))
+        L.append(element)
+        if len(element) >= 1 and type(element) == bs4.element.NavigableString:
+            if any(x in element for x in rechtsformen):
+                print("Ebene 1: " + str(c) + "/" + str(len(element)))                                                                                                            
+                if len(element) <= 30:
+                    firmalist.append(element) 
+                    print(element)
+        if len(element) >= 1 and type(element) == bs4.element.Tag:
+            if any(x in element.get_text() for x in rechtsformen):
+                for c, element in enumerate(element):
+                   # print("Ebene 2: " + str(c) + "/" + str(len(element)))
+                    print(element)
+                    if len(element) >= 1 and type(element) == bs4.element.NavigableString:
+                        if any(x in element for x in rechtsformen):
+                            print("Ebene 2 " + str(c) + "/" + str(len(element))) 
+                            if len(element) <= 30:
+                                firmalist.append(element)
+                                #print(element)
+                    if len(element) >= 1 and type(element) == bs4.element.Tag:
+                        if any(x in element.get_text() for x in rechtsformen):
+                            for c,element in enumerate(element):
+                              #  print("Ebene 3: " + str(c) + "/" + str(len(element)))
+                                print(element)
+                                if len(element) >= 1 and type(element) == bs4.element.NavigableString:
+                                    if any(x in element for x in rechtsformen):
+                                        if len(element) <= 30:
+                                            firmalist.append(element)                                    
+                                if len(element) >= 1 and type(element) == bs4.element.Tag:
+                                    if any(x in element.get_text() for x in rechtsformen):
+                                        for c,element in enumerate(element):
+                                           # print("Ebene 4: " + str(c) + "/" + str(len(element)))
+                                            #print(element)
+                                            if len(element) >= 1 and type(element) == bs4.element.NavigableString:
+                                                if any(x in element for x in rechtsformen):
+                                                    if len(element) <= 30:
+                                                        firmalist.append(element)
+                                            if len(element) >= 1 and type(element) == bs4.element.Tag:
+                                                if any(x in element.get_text() for x in rechtsformen):
+                                                    for c,element in enumerate(element):
+                                                        #print("Ebene 5: " + str(c) + "/" + str(len(element)))
+                                                        if len(element) >= 1 and type(element) == bs4.element.NavigableString:
+                                                            if any(x in element for x in rechtsformen):
+                                                                if len(element) <= 30:
+                                                                    firmalist.append(element)                                                                                                                           
+                                                        if len(element) >= 1 and type(element) == bs4.element.Tag:
+                                                            if any(x in element.get_text() for x in rechtsformen):
+                                                                for c,element in enumerate(element):
+                                                                    if len(element) >= 1 and type(element) == bs4.element.NavigableString:
+                                                                        if any(x in element for x in rechtsformen):
+                                                                            if len(element) <= 30:
+                                                                                firmalist.append(element)                                                                            
+                                                                    if len(element) >= 1 and type(element) == bs4.element.Tag:
+                                                                        if any(x in element.get_text() for x in rechtsformen):
+                                                                            #print("Ebene 6: " + str(c) + "/" + str(len(element)))
+                                                                            #print(element)
+                                                                            for c,element in enumerate(element):
+                                                                                if len(element) >= 1 and type(element) == bs4.element.NavigableString:
+                                                                                    if any(x in element for x in rechtsformen):
+                                                                                        if len(element) <= 30:
+                                                                                            firmalist.append(element)
+                                                                                if len(element) >= 1 and type(element) == bs4.element.Tag:
+                                                                                    if any(x in element.get_text() for x in rechtsformen):
+                                                                                       # print("Ebene 7: " + str(c) + "/" + str(len(element)))
+                                                                                        #print(element)
+                                                                                        for c,element in enumerate(element):
+                                                                                            if len(element) >= 1 and type(element) == bs4.element.NavigableString:
+                                                                                                if any(x in element for x in rechtsformen):
+                                                                                                    if len(element) <= 30:
+                                                                                                        firmalist.append(element)
+                                                                                            if len(element) >= 1 and type(element) == bs4.element.Tag:
+                                                                                                if any(x in element.get_text() for x in rechtsformen):
+                                                                                                    #print("Ebene 8: " + str(c) + "/" + str(len(element)))
+                                                                                                    #print(element)
+                                                                                                    for c,element in enumerate(element):
+                                                                                                        if len(element) >= 1 and type(element) == bs4.element.NavigableString:
+                                                                                                            if any(x in element for x in rechtsformen):
+                                                                                                                print("Ebene 9: " + str(c) + "/" + str(len(element)))                                                                                                            
+                                                                                                                if len(element) <= 30:
+                                                                                                                    firmalist.append(element) 
+                                                                                                                    print(element)
+                                                                                                        if len(element) >= 1 and type(element) == bs4.element.Tag: 
+                                                                                                            print("Ebene 9: Tag")
+                                                                                                            if any(x in element.get_text() for x in rechtsformen):                                                                                                                                                                                                                         
+                                                                                                                for c,element in enumerate(element):
+                                                                                                                    if len(element) >= 1 and type(element) == bs4.element.NavigableString:                                                                                                                    
+                                                                                                                        if any(x in element for x in rechtsformen):
+                                                                                                                            print("Ebene 10: " + str(c) + "/" + str(len(element)))
+                                                                                                                            if len(element) <= 30:
+                                                                                                                                firmalist.append(element) 
+                                                                                                                                print(element)
+                                                                                                                    if len(element) >= 1 and type(element) == bs4.element.Tag:
+                                                                                                                        print("Ebene 10: Tag")
+                                                                                                                        L2.append(element)
+                                                                                                                        if any(x in element.get_text() for x in rechtsformen):  
+                                                                                                                            L2b.append(element)
+                                                                                                                            for c,element in enumerate(element):
+                                                                                                                                if len(element) >= 1 and type(element) == bs4.element.NavigableString:
+                                                                                                                                    if any(x in element for x in rechtsformen):
+                                                                                                                                        print("Ebene 11: " + str(c) + "/" + str(len(element)))
+                                                                                                                                        if len(element) <= 30:
+                                                                                                                                            firmalist.append(element) 
+                                                                                                                                            print(element)
+                                                                                                                                if len(element) >= 1 and type(element) == bs4.element.Tag: 
+                                                                                                                                    print("Ebene 11: Tag" + str(element))
+                                                                                                                                    if any(x in element.get_text() for x in rechtsformen):
+                                                                                                                                        L3.append(element)
+                                                                                                                                        for c,element in enumerate(element):
+                                                                                                                                            print("Ebene 12: " + str(c) + "/" + str(len(element)))
+                                                                                                                                            print(element)
+                                                                                                                                            L4.append(element)
+                
+    print(firmalist)                                                                                                                            
+    unique,pos = np.unique(firmalist,return_inverse=True)
+    counts = np.bincount(pos)
+    maxpos = counts.argmax()
+    firma = str(unique[maxpos]).replace('\n', '')  
+    return (firma)
+        
+
+def div_schleife(div):
+    for c,element in enumerate(div):
+        if len(element) >= 1 and type(element) == bs4.element.Tag:
+            if any(x in element.get_text() for x in rechtsformen):
+                div_schleife(element)
+    
+div_schleife(soup.find_all("div"))
