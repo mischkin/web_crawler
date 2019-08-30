@@ -1,5 +1,5 @@
 from request import get_soup
-
+import re
 
 def GetLinks(url):
     RawLinks = []

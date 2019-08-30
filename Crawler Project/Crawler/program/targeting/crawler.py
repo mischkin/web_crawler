@@ -263,13 +263,13 @@ def cat_crawler(url):
     return LinkDic, LinkList
 
 def company_crawler(url): # exports a Dic of all subsites in website
-    website_links_list = {}
+    WebsiteLinksDic = {}
     print(url)
     RawCompanyLinks = GetLinks(url)
     WebsiteLinks = GetWebsiteLinks(url, RawCompanyLinks)
-    website_links_list[url] = WebsiteLinks
-    #print(website_links_list[company])
-    return website_links_list
+    WebsiteLinksDic[url] = WebsiteLinks
+    #print(WebsiteLinksDic[company])
+    return WebsiteLinksDic
         
         
 
@@ -305,13 +305,13 @@ def north_data(company_name):
 
 
 
-def get_data(website_links_list):
+def get_data(WebsiteLinksDic):
     Word_Dic = {}
-    for c,company in enumerate(website_links_list):
-        print(company + " beginnt: " + str(c) + "/" + str(len(website_links_list)))
+    for c,company in enumerate(WebsiteLinksDic):
+        print(company + " beginnt: " + str(c) + "/" + str(len(WebsiteLinksDic)))
         Word_Dic[company] = {}
-        for c,link in enumerate(website_links_list[company]):
-            print(str(c)+ "/" + str(len(website_links_list[company])))
+        for c,link in enumerate(WebsiteLinksDic[company]):
+            print(str(c)+ "/" + str(len(WebsiteLinksDic[company])))
             print(link)
             if "impressum" in link.lower():
                 soup_impressum = get_soup(link)                          # Create Attribute to reach outside function
@@ -579,8 +579,8 @@ def run_program(urllist):
     #create_csv()
     for url in urllist:
 
-        website_links_list = company_crawler(url)  # get all website links
-        data = get_data(website_links_list) # get data
+        WebsiteLinksDic = company_crawler(url)  # get all website links
+        data = get_data(WebsiteLinksDic) # get data
         df = create_dataframe(data) # vreate dataframe
         export_csv(df)
     return data
