@@ -314,7 +314,7 @@ def get_data(WebsiteLinksDic):
             print(str(c)+ "/" + str(len(WebsiteLinksDic[company])))
             print(link)
             if "impressum" in link.lower():
-                get_data.soup_impressum = get_soup(link)                          # Create Attribute to reach outside function
+                soup_impressum = get_soup(link)                          # Create Attribute to reach outside function
                 Word_Dic[company]["firma"] = {}
                 Word_Dic[company]["firma"] = get_firma()
                 Word_Dic[company]["telefon"] = {}
@@ -488,7 +488,7 @@ def get_firma():
 
 
 def get_telefon():
-    soup = get_data.soup_impressum
+    soup = soup_impressum
     div = soup.find_all("div")
     regex = "\+49 \(0\)[ 0-9]+|[0][0-9][ 0-9]+|\+49[ 0-9]+"
     numbers_raw = []
@@ -509,7 +509,7 @@ def get_telefon():
     
     
 def get_email():
-    soup = get_data.soup_impressum
+    soup = soup_impressum
     div = soup.find_all("div")
     regex1 = "[a-zA-Z0-9_.+-]+\(at\)[a-zA-Z0-9_.+-]+" # Erster Teill ist der offizielle. ". für Fall info(at)gmx.de  
     regex2 = "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9_.+-]+"
