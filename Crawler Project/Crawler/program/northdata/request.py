@@ -12,7 +12,9 @@ def get_soup(url, count = 0):
     r = None
     while r is None:
         trueloop[0] += 1
-        if trueloop[0] >= 5:
+        if trueloop[0] >= 2:
+            print("Connection Failed")
+            return None
             break
         else:
             try:                                            # könnte auch Session einführen
@@ -30,9 +32,11 @@ def get_soup(url, count = 0):
     html = r.text
     soup = BeautifulSoup(html, "html5lib")
     if re.findall("Zu viele Abfragen", soup.get_text()):
-        if count <= 2:  # Spam Ausnahme
-            print("new try in 10s")
-            time.sleep(60)
-            count = count + 1
+        print("new try in 30s")
+        time.sleep(30)
+        count = count + 1
+        if count <= 2:
             get_soup(url, count)
+        else:
+            return None
     return soup

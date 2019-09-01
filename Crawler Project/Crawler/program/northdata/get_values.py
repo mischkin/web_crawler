@@ -18,7 +18,7 @@ def get_telefon(soup):
     numbers_unique = list(dict.fromkeys(numbers_clean))
     seperator = ', '
     numbers_string = seperator.join(numbers_unique)
-    print(numbers_string)
+    # print(numbers_string)
     return(numbers_string)
 
 
@@ -37,7 +37,7 @@ def get_email(soup):
     seperator = ', '
     emails_unique = list(dict.fromkeys(emails_clean))
     emails_string = seperator.join(emails_unique).replace('(at)', '@')
-    print(emails_string)
+    # print(emails_string)
     return(emails_string)
 
 
@@ -68,6 +68,7 @@ def get_firma(soup):
     L3 = []
     L4 = []
     Ls1 =[]
+    # print(soup)
     div1 = soup.find_all("div")
     rechtsformen = ["GmbH", "GbR", "OHG", " KG ", "KG\n", "AG ", "AG\n", "GmbH & Co KG"]
     firmalist = []
@@ -185,10 +186,13 @@ def get_firma(soup):
                                                                                                                                             L4.append(element)
 
     #print(firmalist)
-    unique,pos = np.unique(firmalist,return_inverse=True)
-    counts = np.bincount(pos)
-    maxpos = counts.argmax()
-    firma = str(unique[maxpos]).replace('\n', '')
-    print(firma)
-    return (firma)
+    if len(firmalist) == 0:
+        return None
+    else:
+        unique,pos = np.unique(firmalist,return_inverse=True)
+        counts = np.bincount(pos)
+        maxpos = counts.argmax()
+        firma = str(unique[maxpos]).replace('\n', '')
+        # print(firma)
+        return (firma)
 

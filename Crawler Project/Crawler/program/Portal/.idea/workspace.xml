@@ -2,25 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a85e09ef-d7b6-41e0-b1a1-a082bada7574" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Portal.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_csv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/program.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/request.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../northdata/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../northdata/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../northdata/.idea/northdata.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../northdata/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../northdata/company_crawler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../targeting/.idea/targeting.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../northdata/crawler.py" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../northdata/import_urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../northdata/skip_itearation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/export_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_links.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_links.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program.py" beforeDir="false" afterPath="$PROJECT_DIR$/program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../northdata/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../northdata/company_crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/company_crawler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../northdata/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../northdata/export_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/export_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../northdata/get_links.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_links.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../northdata/get_values.py" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/get_values.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../northdata/program.py" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/program.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../northdata/request.py" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/request.py" afterDir="false" />
     </list>
@@ -35,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/program.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            <state relative-caret-position="250">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding>
                 <element signature="e#81#114#0" expanded="true" />
               </folding>
@@ -50,17 +42,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/export_csv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="124">
+              <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/get_links.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="107" selection-start-line="107" selection-end-line="107" />
+            <state relative-caret-position="116">
+              <caret line="7" selection-start-line="7" selection-end-line="15" selection-end-column="34" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -72,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/request.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -92,6 +84,13 @@
       <find>Liste</find>
       <find>GetStartseiteLinks</find>
       <find>drop</find>
+      <find>GetUrlVariations</find>
+      <find>vorher</find>
+      <find>csv_syntax_clean</find>
+      <find>print(</find>
+      <find>vs</find>
+      <find>Liste</find>
+      <find>UrlVariations</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\admin\2. Privat\Startup Crawler\Git\Crawler Project\Crawler\program\Portal</dir>
@@ -110,9 +109,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="479" />
+    <option name="x" value="477" />
     <option name="y" value="270" />
-    <option name="width" value="2883" />
+    <option name="width" value="2885" />
     <option name="height" value="1620" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -122,6 +121,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -133,7 +133,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -141,6 +140,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -207,18 +212,19 @@
       <workItem from="1567179849416" duration="1074000" />
       <workItem from="1567181689541" duration="7000" />
       <workItem from="1567182930863" duration="63000" />
-      <workItem from="1567183920771" duration="3137000" />
+      <workItem from="1567183920771" duration="3577000" />
+      <workItem from="1567341518386" duration="5412000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5365000" />
+    <option name="totallyTimeSpent" value="11217000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1719" height="972" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23150933" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23451594" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -228,7 +234,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32977462" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32977462" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -254,7 +260,7 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Portal$program.coverage" NAME="program Coverage Results" MODIFIED="1567187095515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Portal$program.coverage" NAME="program Coverage Results" MODIFIED="1567346458447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
@@ -279,33 +285,33 @@
     <entry file="file://$PROJECT_DIR$/request.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/program.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="e#81#114#0" expanded="true" />
-          </folding>
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/export_csv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="124">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/get_links.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="116">
+          <caret line="7" selection-start-line="7" selection-end-line="15" selection-end-column="34" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="e#81#114#0" expanded="true" />
           </folding>
         </state>
       </provider>

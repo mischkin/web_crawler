@@ -8,8 +8,11 @@ def GetLinks(url):
     for link_html in links_html:
         link = str(link_html.get('href'))
         if len(link) >= 4:
-            if link[0:4] == 'http':
-                RawLinks.append(link)
+            if url[-1] == "/":
+                url = url[:-1]
+            if 'http' not in link:
+                link = url + link
+            RawLinks.append(link)
     RawLinks = list(set(RawLinks))
     #print(RawLinks)
     return RawLinks
@@ -52,7 +55,7 @@ def GetCategoryLinks(url):
     CatLinks = []
     RawLinks = GetLinks(url)
     for c,link in enumerate(RawLinks):
-        print("{}/{} RawLinks".format(c,len(RawLinks)))
+        # print("{}/{} RawLinks".format(c,len(RawLinks)))
         if link.find('wpbdp_category') != -1:
             CatLinks.append(link)
     CatLinks = list(set(CatLinks))
@@ -71,18 +74,18 @@ def GetStartseiteLinks(url):
     StartLinks = []
     RawLinks = GetLinks(url)
     for c,link in enumerate(RawLinks):
-        print("{}/{} RawLinks".format(c,len(RawLinks)))
+        # print("{}/{} RawLinks".format(c,len(RawLinks)))
         regexp = GetRegExpr(str(link))[0]
         #print("regex: " + str(regexp))
         if regexp != None:
             reg = re.findall(regexp, link)
             if len(reg) >= 1:
-                print(str(link) + " vs " + str(reg[0]))
+                # print(str(link) + " vs " + str(reg[0]))
                 if str(link) == str(reg[0]) or str(link) == str(reg[0] + "/"):
                     StartLinks.append(link)
-    print("vorher" + str(StartLinks))
+    # print("vorher" + str(StartLinks))
     StartLinks = list(set(StartLinks))
-    print("nachher" + str(StartLinks))
+    # print("nachher" + str(StartLinks))
     return StartLinks
 
 
@@ -103,7 +106,7 @@ def cat_crawler(url):
         print("{}/{} CatLinks".format(c,len(CatLinks)))
         print("\ngetting Starseite Links for {}\n".format(catlink))
         StartLinks = GetStartseiteLinks(catlink)
-        print("Liste für: " + str(catlink) + str(StartLinks))
+        # print("Liste für: " + str(catlink) + str(StartLinks))
         LinkDic[catlink] = StartLinks
     LinkList = [item for sublist in list(LinkDic.values()) for item in sublist]
     return LinkDic, LinkList

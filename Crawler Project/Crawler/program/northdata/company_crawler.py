@@ -17,8 +17,11 @@ def GetLinks(url):
     for link_html in links_html:
         link = str(link_html.get('href'))
         if len(link) >= 4:
-            if link[0:4] == 'http':
-                RawLinks.append(link)
+            if url[-1] == "/":
+                url = url[:-1]
+            if 'http' not in link:
+                link = url + link
+            RawLinks.append(link)
     RawLinks = list(set(RawLinks))
     #print(RawLinks)
     return RawLinks
