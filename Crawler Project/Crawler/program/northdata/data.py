@@ -12,6 +12,7 @@ def get_soup_impressum(website_links_list):
     for impressum in impressumlist:
         for link in website_links_list:
             if impressum in link.lower():
+                print(link)
                 soup = get_soup(link)
                 return soup
                 break

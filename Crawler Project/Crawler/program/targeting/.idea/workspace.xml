@@ -2,25 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24578030-c147-4ae3-9763-890a48b128b3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Portal/.idea/Portal.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Portal/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Portal/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Portal/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Portal/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Portal/program.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../northdata/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../northdata/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../northdata/.idea/northdata.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../northdata/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../northdata/company_crawler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/targeting.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../northdata/crawler.py" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/company_crawler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_csv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/get_words.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.spyproject/workspace.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../.spyproject/workspace.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../northdata/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../northdata/company_crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/company_crawler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../northdata/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../northdata/export_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/export_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../northdata/get_links.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Portal/get_links.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../northdata/get_values.py" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/get_values.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../northdata/program.py" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/program.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../northdata/request.py" beforeDir="false" afterPath="$PROJECT_DIR$/../northdata/request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/program.py" beforeDir="false" afterPath="$PROJECT_DIR$/program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Debug/debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Debug/debug.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,24 +25,57 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/program.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state relative-caret-position="425">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <element signature="e#0#110#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/request.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/export_csv.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/get_words.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/company_crawler.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="-306">
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -56,6 +85,21 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>firmalist</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>wordlist</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
@@ -63,24 +107,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/program.py" />
+        <option value="$PROJECT_DIR$/get_words.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/targeting.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/../Portal/.idea/Portal.iml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-14" />
-    <option name="y" value="-14" />
-    <option name="width" value="3868" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-16" />
+    <option name="y" value="-16" />
+    <option name="width" value="3870" />
     <option name="height" value="2187" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -89,6 +123,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -100,11 +135,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -120,6 +155,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\2. Privat\Startup Crawler\Git\Crawler Project\Crawler\program\targeting" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -147,17 +187,18 @@
       <workItem from="1567179844940" duration="599000" />
       <workItem from="1567181246964" duration="114000" />
       <workItem from="1567182957190" duration="40000" />
+      <workItem from="1567863768968" duration="3753000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1692000" />
+    <option name="totallyTimeSpent" value="5445000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1719" height="972" extended-state="6" />
+    <frame x="-6" y="-6" width="1719" height="972" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25917017" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26217678" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -193,19 +234,45 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/crawler.py">
+    <entry file="file://$PROJECT_DIR$/program.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/program.py">
+    <entry file="file://$PROJECT_DIR$/company_crawler.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_csv.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state relative-caret-position="-306">
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_words.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
         </state>
       </provider>
     </entry>
